@@ -107,7 +107,7 @@ func TestWrites(t *testing.T) {
 		t.Fatal("bad value:", expected, found)
 	}
 
-	if expected, found := 5.0, res["foobar.bar.one-minute"]; !floatEquals(found, expected) {
+	if expected, found := 5.0, res["foobar.bar.m1_rate"]; !floatEquals(found, expected) {
 		t.Fatal("bad value:", expected, found)
 	}
 
@@ -115,11 +115,11 @@ func TestWrites(t *testing.T) {
 		t.Fatal("bad value:", expected, found)
 	}
 
-	if expected, found := 5000.0, res["foobar.baz.99-percentile"]; !floatEquals(found, expected) {
+	if expected, found := 5000.0, res["foobar.baz.p99"]; !floatEquals(found, expected) {
 		t.Fatal("bad value:", expected, found)
 	}
 
-	if expected, found := 3000.0, res["foobar.baz.50-percentile"]; !floatEquals(found, expected) {
+	if expected, found := 3000.0, res["foobar.baz.p50"]; !floatEquals(found, expected) {
 		t.Fatal("bad value:", expected, found)
 	}
 }
